@@ -9,7 +9,7 @@ Later I will add:
  - result page after all questions are sent
 
 ## Getting Started
-For project I use Node.js 14, but most of packages works on different versions of node, if you have a problems with sass [check supported version](https://github.com/sass/node-sass) and use different version of node/node-sass package
+For project I use Node.js 14, but most of packages are working on different versions of node, if you have a problems with sass [check supported versions](https://github.com/sass/node-sass) and use different version of node/node-sass(edit package.json and package-lock.json) package
 
 To learn your version of node run:
 
