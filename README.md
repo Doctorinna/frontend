@@ -1,4 +1,4 @@
-This repository is place for Doctorinna frontend project. It is built using next js framework on react, with redux as state manager and material ui components. Current version is just layout of a SPA.
+This repository is place for Doctorinna frontend project. It is built using next js framework on react, with redux as state manager and material ui components. Project is written on typescript to allow code completion and catching bugs more easily. Current version is just layout of a SPA.
 
 Later I will add:
  - new pages
