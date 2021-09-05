@@ -9,8 +9,23 @@ Later I will add:
  - result page after all questions are sent
 
 ## Getting Started
+For project I use Node.js 14, but most of packages works on different versions of node, if you have a problems with sass check https://github.com/sass/node-sass
 
-First, run the development server:
+To learn your version of node run:
+
+```bash
+node --version
+```
+
+To install dependencies run:
+
+```bash
+npm install
+# or
+yarn install
+```
+
+To run the development server:
 
 ```bash
 npm run dev
