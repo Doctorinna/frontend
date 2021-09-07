@@ -1,18 +1,16 @@
 import React from "react";
 import Navigation from "./Navigation";
-import {Container, Grid} from "@material-ui/core";
-
+import {Box} from "@material-ui/core";
+import classes from "../styles/Layout.module.scss";
 
 const Layout: React.FC = (props) => {
     return (
-        <React.Fragment>
+        <Box className={classes.Container}>
             <Navigation/>
-            <Container>
-                <Grid container alignItems={"center"} justifyContent={"center"}>
-                    <Grid xs={12}>{props.children}</Grid>
-                </Grid>
-            </Container>
-        </React.Fragment>
+            <Box className={classes.Box}>
+                {props.children}
+            </Box>
+        </Box>
     );
 };
 
