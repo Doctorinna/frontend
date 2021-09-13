@@ -1,36 +1,24 @@
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-    transform: translateX(-400px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
+$timeout: 300ms;
+$transition: opacity $timeout ease-in-out, transform $timeout ease-in-out;
+
+.page-entering {
+  transition: $transition;
+  opacity: 1;
+  transform: translateX(0px);
+  animation: "blink .3s linear 2";
 }
-@keyframes fade-out {
-  0% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateX(100%);
-  }
+.page-exiting {
+  transition: $transition;
+  opacity: 0;
+  transform: translateX(-50px);
 }
 
-.page-enter-active {
-  animation: fade-out 1s forwards;
-}
-.page-exit-active {
-  animation: fade-in 1s forwards;
-}
-/*
-.page-exit {
-  animation: fade-in 1s forwards;
-}
-.page-enter {
-  animation: fade-in 1s forwards;
+.page-exited {
+  opacity: 0;
+  transform: translateX(100%);
 }
 
- */
+.page-entered {
+  opacity: 0;
+  transform: translateX(50px);
+}

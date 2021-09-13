@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {
     Card,
     CardContent,
@@ -15,40 +15,34 @@ import {
 } from "@material-ui/core";
 import classes from "./Question.module.scss";
 
-const Question:React.FC = () => {
-    //todo check if works
-    return (
-        <Grid className={classes.Question}>
-            <Card>
-                <CardContent>
-                    <FormControl component="fieldset">
-                        <FormLabel component="legend">Gender</FormLabel>
-                        <RadioGroup aria-label="gender" name="gender1" value={value} onChange={handleChange}>
-                            <FormControlLabel value="female" control={<Radio />} label="Female" />
-                            <FormControlLabel value="male" control={<Radio />} label="Male" />
-                            <FormControlLabel value="other" control={<Radio />} label="Other" />
-                        </RadioGroup>
-                    </FormControl>
-                    <form noValidate autoComplete="off">
-                        <TextField id="standard-basic"/>
-                        <TextField
-                            error={false}
-                            id="standard-select-option-1"
-                            select
-                            label="select-1"
-                            value={null}
-                            onChange={()=>()}
-                            helperText="Please select your option"
-                        >
-                            <MenuItem key={} value={}></MenuItem>
-                        </TextField>
-                    </form>
+interface QuestionProps {
+    variants: string[],
+    id: number
+}
 
-                </CardContent>
-                <CardActions>
-                    <Button></Button>
-                </CardActions>
-            </Card>
+const Question:React.FC<QuestionProps> = (props) => {
+    const [value, setValue] = useState("");
+    return (
+        <Grid container justifyContent={"center"} alignItems={"center"} direction={"column"}>
+            <Grid item className={classes.Question} xs={6}>
+                <Card>
+                    <CardContent>
+                        <FormControl component="fieldset">
+                            <FormLabel component="legend">Gender</FormLabel>
+                            <RadioGroup aria-label="gender" name="gender1" value={value} onChange={(e)=>{setValue(e.target.value)}}>
+                                {props.variants.map(el=>(
+                                    <FormControlLabel key={el} value={el} control={<Radio />} label={el} />
+                                ))}
+                            </RadioGroup>
+                        </FormControl>
+
+                    </CardContent>
+                    <CardActions>
+                        <p>{value}</p>
+                        <Button>Click</Button>
+                    </CardActions>
+                </Card>
+            </Grid>
         </Grid>
     );
 };

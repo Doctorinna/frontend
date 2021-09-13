@@ -1,14 +1,19 @@
 import React from "react";
-import {Grid, Card} from "@material-ui/core";
+import {Grid, Typography} from "@material-ui/core";
+import Link from "next/link";
 
 const Index = () => {
     return (
         <Grid container justifyContent={"center"}>
             <Grid>
-                <Card>as</Card>
+                <Typography variant={"body1"}>Do you want to know your risk factor?</Typography>
+                <Typography variant={"body1"}>Answer our questions and learn it!</Typography>
+                <Link href={"/questions"}>
+                    <a>Click here!
+                    </a>
+                </Link>
             </Grid>
             <Grid>
-                <Card>ad</Card>
             </Grid>
         </Grid>
     );
