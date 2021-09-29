@@ -4,7 +4,7 @@ import {AppBar, Toolbar, IconButton, Typography, Grid, Box} from "@material-ui/c
 import {Menu as MenuIcon} from "@material-ui/icons";
 import {nav} from "../../router/nav";
 import classes from "./Navigation.module.scss";
-
+import Link from "next/link";
 const Navigation = () => {
 
     return (
@@ -14,7 +14,11 @@ const Navigation = () => {
                     <Grid container justifyContent={"flex-start"} alignItems={"center"}>
                         <Grid item xs={1}>
                             <IconButton edge="start" color="inherit" aria-label="menu">
-                                <MenuIcon/>
+                                <MenuIcon>
+                                    <Link href="/">
+                                        <a/>
+                                    </Link>
+                                </MenuIcon>
                             </IconButton>
                         </Grid>
                         {nav.map((el, ind) => (

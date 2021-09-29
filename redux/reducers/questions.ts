@@ -4,7 +4,7 @@ const initialState: questionsState = {
     questions: []
 }
 
-export const reducer = (state:questionsState = initialState, action: actions) => {
+export const reducer = (state:questionsState = initialState, action: actions):questionsState => {
     switch (action.type){
         case actionTypes.FETCH_QUESTIONS:
             return {...state, questions: action.payload};//todo
