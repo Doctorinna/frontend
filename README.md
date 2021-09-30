@@ -1,5 +1,6 @@
 # Doctorinna-Frontend
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/d6c01263e90b4c3a9e85b630e274eb72)](https://www.codacy.com/gh/Doctorinna/frontend/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Doctorinna/frontend&amp;utm_campaign=Badge_Grade)
+[![codecov](https://codecov.io/gh/Doctorinna/frontend/branch/master/graph/badge.svg?token=8BE2XA4162)](https://codecov.io/gh/Doctorinna/frontend)
 
 This repository is place for Doctorinna frontend project. It is built using next js framework on react, with redux as state manager and material ui components. Project is written on typescript to allow code completion and catching bugs more easily. Current version is just layout of a SPA.
 
