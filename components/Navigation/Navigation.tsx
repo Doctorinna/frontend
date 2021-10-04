@@ -1,6 +1,6 @@
 import React from "react";
-import {AppBar, Toolbar, IconButton, Typography, Grid, Box} from "@material-ui/core";
-import {Menu as MenuIcon} from "@material-ui/icons";
+import {AppBar, Toolbar, IconButton, Typography, Grid} from "@mui/material";
+import {Menu as MenuIcon} from "@mui/icons-material";
 import {nav} from "../../router/nav";
 import classes from "./Navigation.module.scss";
 import Link from "next/link";

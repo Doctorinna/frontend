@@ -12,15 +12,16 @@
     "test:coverage": "jest --coverage"
   },
   "dependencies": {
-    "@material-ui/core": "^4.12.3",
-    "@material-ui/icons": "^4.11.2",
+    "@emotion/react": "^11.4.1",
+    "@emotion/styled": "^11.3.0",
+    "@mui/icons-material": "^5.0.1",
+    "@mui/material": "^5.0.2",
     "@types/node": "^16.7.7",
     "@types/react-dom": "^17.0.9",
     "@types/react-redux": "^7.1.18",
     "@types/react-transition-group": "^4.4.2",
     "axios": "^0.21.1",
     "bootstrap": "^5.1.0",
-    "material-ui-image": "^3.3.2",
     "next": "11.1.0",
     "next-redux-wrapper": "^7.0.5",
     "node-sass": "^4.14.1",
@@ -35,7 +36,6 @@
   "devDependencies": {
     "@types/enzyme": "^3.10.9",
     "@types/jest": "^27.0.1",
-    "@types/material-ui": "^0.21.9",
     "@types/react": "17.0.19",
     "@wojtekmaj/enzyme-adapter-react-17": "^0.6.3",
     "babel-core": "^6.26.3",
