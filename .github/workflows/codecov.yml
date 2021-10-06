@@ -15,9 +15,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
-          fetch-depth: 2
+          fetch-depth: 0
           repository: Denisalik/ssad_frontend_deploy
           token: ${{ secrets.PAT_FOR_PUSH}}
+          persist-credentials: false
 
       - name: Set up Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
@@ -32,8 +33,10 @@ jobs:
           git add .
           git commit -m "pushing to deployment"
           git config -l | grep 'http\..*\.extraheader' | cut -d= -f1 | xargs -L1 git config --unset-all
-          git push --force --quiet https://Denisalik:${{ secrets.PAT_FOR_PUSH }}@github.com/Denisalik/ssad_frontend_deploy.git HEAD:master
+          git push --force --quiet https://Denisalik:$REPO_KEY@github.com/Denisalik/ssad_frontend_deploy.git HEAD:master
 
+        env:
+          REPO_KEY: ${{ secrets.PAT_FOR_PUSH }}
       - name: Install dependencies
         run: npm install
 
