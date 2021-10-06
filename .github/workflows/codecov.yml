@@ -34,7 +34,7 @@ jobs:
           git add .
           git commit -m "pushing to deployment"
           git config -l | grep 'http\..*\.extraheader' | cut -d= -f1 | xargs -L1 git config --unset-all
-          git push --force --quiet https://github-actions:${{ secrets.PAT_FOR_PUSH }}@github.com/Denisalik/ssad_frontend_deploy.git HEAD:master
+          git push --force --quiet https://Denisalik:${{ secrets.PAT_FOR_PUSH }}@github.com/Denisalik/ssad_frontend_deploy.git HEAD:master
 
       - name: Run tests
         run: npm run test:coverage
