@@ -29,14 +29,18 @@ jobs:
         run: npm run test:coverage
 
       - name: Commit to user repo(needed for deployment to vercel for free)
+        uses: actions/checkout@v2
+        with:
+          repository: Denisalik/ssad_frontend_deploy
+          token: ${{ secrets.PAT_FOR_PUSH }}
         run: |
-          git config user.email "schegletovdenis@mail.ru"
-          git config user.name Denisalik
+          git config --local user.email "schegletovdenis@mail.ru"
+          git config --local user.name Denisalik
           rm -r .github
           git add .
           git commit -m "pushing to deployment"
-          git remote add deploy https://github.com/Denisalik/ssad_frontend_deploy
-          git push -u deploy HEAD:master
+          git push -u https://github.com/Denisalik/ssad_frontend_deploy HEAD:master
+          git push https://github-actions:${{ secrets.PAT_FOR_PUSH }}@github.com/Denisalik/ssad_frontend_deploy.git $GITHUB_REF
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
