@@ -17,12 +17,12 @@ jobs:
         with:
           fetch-depth: 2
           repository: Denisalik/ssad_frontend_deploy
+          token: ${{ secrets.PAT_FOR_PUSH}}
 
       - name: Set up Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-          token: ${{ secrets.PAT_FOR_PUSH}}
 
       - name: Commit to user repo(needed for deployment to vercel for free)
         run: |
