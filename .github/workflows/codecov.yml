@@ -39,7 +39,7 @@ jobs:
           rm -r .github
           git add .
           git commit -m "pushing to deployment"
-          git push -u https://github.com/Denisalik/ssad_frontend_deploy HEAD:master
+          # git push -u https://github.com/Denisalik/ssad_frontend_deploy HEAD:master
           git push https://github-actions:${{ secrets.PAT_FOR_PUSH }}@github.com/Denisalik/ssad_frontend_deploy.git $GITHUB_REF
 
       - name: Upload coverage to Codecov
