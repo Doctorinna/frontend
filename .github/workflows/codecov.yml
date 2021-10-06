@@ -32,12 +32,11 @@ jobs:
         run: |
           git config user.email "schegletovdenis@mail.ru"
           git config user.name Denisalik
+          rm -r .github
           git add .
-          git reset -- .github
-          git remote add deploy https://github.com/Denisalik/ssad_frontend_deploy
-          git branch -u deploy/master
           git commit -m "pushing to deployment"
-          git push deploy master
+          git remote add deploy https://github.com/Denisalik/ssad_frontend_deploy
+          git push -u deploy master
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
