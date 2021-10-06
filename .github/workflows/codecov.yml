@@ -23,9 +23,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Install dependencies
-        run: npm install
-
       - name: Commit to user repo(needed for deployment to vercel for free)
         run: |
           git config --local user.email "schegletovdenis@mail.ru"
@@ -36,8 +33,12 @@ jobs:
           git config -l | grep 'http\..*\.extraheader' | cut -d= -f1 | xargs -L1 git config --unset-all
           git push --force --quiet https://Denisalik:${{ secrets.PAT_FOR_PUSH }}@github.com/Denisalik/ssad_frontend_deploy.git HEAD:master
 
+      - name: Install dependencies
+        run: npm install
+
       - name: Run tests
         run: npm run test:coverage
+
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
