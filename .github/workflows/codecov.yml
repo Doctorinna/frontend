@@ -33,7 +33,7 @@ jobs:
           rm -r .github
           git add .
           git commit -m "pushing to deployment"
-          git push https://github-actions:${{ secrets.PAT_FOR_PUSH }}@github.com/Denisalik/ssad_frontend_deploy.git $GITHUB_REF:master
+          git push https://github-actions:${{ secrets.PAT_FOR_PUSH }}@github.com/Denisalik/ssad_frontend_deploy.git HEAD:master
 
       - name: Run tests
         run: npm run test:coverage
