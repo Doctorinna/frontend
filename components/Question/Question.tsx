@@ -30,6 +30,7 @@ const Question: React.FC<QuestionProps> = ({question}) => {
         <Grid container justifyContent={"center"} alignItems={"center"} direction={"column"}>
             <Grid item className={classes.Question} xs={6}>
                 <FormControl component="fieldset">
+
                     <FormLabel component="legend">Gender</FormLabel>
                     <RadioGroup aria-label="gender" name="gender1" value={value} onChange={(e) => {
                         setValue(e.target.value)
