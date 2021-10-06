@@ -30,6 +30,8 @@ jobs:
 
       - name: Commit to user repo(needed for deployment to vercel for free)
         run: |
+          git config user.email "schegletovdenis@mail.ru"
+          git config user.name Denisalik
           git add .
           git reset -- .github
           git commit -m "pushing to deployment"
