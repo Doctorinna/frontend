@@ -12,39 +12,37 @@ import {
     RadioGroup,
     FormControlLabel,
     Radio
-} from "@material-ui/core";
+} from "@mui/material";
 import classes from "./Question.module.scss";
+import Input from "../FormElements/Input";
+import Select from "../FormElements/Select";
+import Slider from "../FormElements/Slider";
+
+import {QuestionType} from "../../redux/types";
 
 interface QuestionProps {
-    variants: string[],
-    id: number
+    question: QuestionType
 }
 
-const Question:React.FC<QuestionProps> = (props) => {
+const Question: React.FC<QuestionProps> = ({question}) => {
     const [value, setValue] = useState("");
     return (
         <Grid container justifyContent={"center"} alignItems={"center"} direction={"column"}>
             <Grid item className={classes.Question} xs={6}>
-                <Card>
-                    <CardContent>
-                        <FormControl component="fieldset">
-                            <FormLabel component="legend">Gender</FormLabel>
-                            <RadioGroup aria-label="gender" name="gender1" value={value} onChange={(e)=>{setValue(e.target.value)}}>
-                                {props.variants.map(el=>(
-                                    <FormControlLabel key={el} value={el} control={<Radio />} label={el} />
-                                ))}
-                            </RadioGroup>
-                        </FormControl>
-
-                    </CardContent>
-                    <CardActions>
-                        <p>{value}</p>
-                        <Button>Click</Button>
-                    </CardActions>
-                </Card>
-            </Grid>
+                <FormControl component="fieldset">
+                    <FormLabel component="legend">Gender</FormLabel>
+                    <RadioGroup aria-label="gender" name="gender1" value={value} onChange={(e) => {
+                        setValue(e.target.value)
+                    }}>
+                        {question.options.map(el => (
+                            <FormControlLabel key={el.id} value={el.answer} control={<Radio/>} label={el.answer}/>
+                        ))}
+                    </RadioGroup>
+                </FormControl>
         </Grid>
-    );
+</Grid>
+)
+    ;
 };
 
 export default Question;

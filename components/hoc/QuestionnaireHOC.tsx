@@ -1,25 +1,19 @@
 import React from "react";
-import {Grid} from "@material-ui/core";
+import {Grid} from "@mui/material";
 import SideNav from "../Layout/SideNav";
-import {AppProps} from "next/app";
 
-interface SideNavProps {
+interface QuestionnaireHocProps {
     underline: number
 }
-type QuestionnaireHocProps = Pick<AppProps, "Component" | "pageProps"> & SideNavProps;
 
-const QuestionnaireHoc: React.FC<QuestionnaireHocProps> = ({
-                                                                          Component,
-                                                                          pageProps,
-                                                                          underline
-                                                                      }) => {
+const QuestionnaireHoc: React.FC<QuestionnaireHocProps> = ({underline, children}) => {
     return (
         <Grid container direction="row">
-            <Grid item>
+            <Grid item xs={4}>
                 <SideNav underline={underline}/>
             </Grid>
-            <Grid item>
-                <Component {...pageProps}/>
+            <Grid item xs={8}>
+                {children}
             </Grid>
         </Grid>
     );

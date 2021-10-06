@@ -1,7 +1,7 @@
 import React from "react";
 import {render, ReactWrapper, shallow, mount, ShallowWrapper} from "enzyme";
 import Navigation from "../components/Navigation/Navigation";
-import {AppBar} from "@material-ui/core";
+import {AppBar} from "@mui/material";
 
 describe("Pages", ()=>{
     describe("Root", ()=>{

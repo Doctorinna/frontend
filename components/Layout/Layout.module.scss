@@ -1,14 +1,14 @@
 .Container {
   min-width: 100vw;
   min-height: 100vh;
-  background-color: lightgray;
+  background-color: #E5E5E5;
   justify-content: center;
   align-items:center;
 }
 
 .Box {
   margin: 1vh 1vw;
-  background: linear-gradient(135deg, rgba(245,245,245,1) 46%, rgba(255,255,255,1) 100%);
+  background: white;
   justify-content: center;
   box-shadow: 0.25vh 0.25vh 0.5vh dimgray;
 }
