@@ -17,7 +17,6 @@ jobs:
         with:
           fetch-depth: 2
           repository: Denisalik/ssad_frontend_deploy
-          token: ${{ secrets.PAT_FOR_PUSH }}
 
       - name: Set up Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
