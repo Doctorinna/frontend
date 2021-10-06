@@ -16,6 +16,8 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 2
+          repository: Denisalik/ssad_frontend_deploy
+          token: ${{ secrets.PAT_FOR_PUSH }}
 
       - name: Set up Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
@@ -29,10 +31,6 @@ jobs:
         run: npm run test:coverage
 
       - name: Commit to user repo(needed for deployment to vercel for free)
-        uses: actions/checkout@v2
-        with:
-          repository: Denisalik/ssad_frontend_deploy
-          token: ${{ secrets.PAT_FOR_PUSH }}
         run: |
           git config --local user.email "schegletovdenis@mail.ru"
           git config --local user.name Denisalik
