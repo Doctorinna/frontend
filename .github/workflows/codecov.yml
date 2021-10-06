@@ -36,7 +36,7 @@ jobs:
           git add .
           git commit -m "pushing to deployment"
           git remote add deploy https://github.com/Denisalik/ssad_frontend_deploy
-          git push -u deploy master
+          git push -u deploy HEAD:master
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
