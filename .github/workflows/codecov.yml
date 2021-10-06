@@ -34,6 +34,7 @@ jobs:
           git config user.name Denisalik
           git add .
           git reset -- .github
+          git branch -u deploy/master
           git commit -m "pushing to deployment"
           git remote add deploy https://github.com/Denisalik/ssad_frontend_deploy
           git push deploy master
