@@ -31,7 +31,6 @@ jobs:
       - name: Commit to user repo(needed for deployment to vercel for free)
         run: |
         git clone --depth 1 https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/Denisalik/ssad_frontend_deploy
-        git add --all
         git reset -- .github
         git commit -m "pushing to deployment"
         git remote add origin https://github.com/Denisalik/ssad_frontend_deploy
