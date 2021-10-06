@@ -1,6 +1,5 @@
 import React from "react";
-import {TextField} from "@material-ui/core";
-import { MenuItem } from "material-ui";
+import { MenuItem, TextField } from "@mui/material";
 
 interface SelectProps {
     options: string[],
