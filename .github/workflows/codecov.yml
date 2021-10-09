@@ -28,16 +28,6 @@ jobs:
       - name: Run tests
         run: npm run test:coverage
 
-      - name: Commit to user repo(needed for deployment to vercel for free)
-        run: |
-        git clone --depth 1 https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/Denisalik/ssad_frontend_deploy
-        echo ${ls}
-        git add .
-        git reset -- .github
-        git commit -m "pushing to deployment"
-        git remote add origin https://github.com/Denisalik/ssad_frontend_deploy
-        git push origin master
-
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
         with:

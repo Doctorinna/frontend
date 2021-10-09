@@ -4,8 +4,7 @@ import {Menu as MenuIcon} from "@mui/icons-material";
 import {nav} from "../../router/nav";
 import classes from "./Navigation.module.scss";
 import Link from "next/link";
-const Navigation = () => {
-
+const Navigation: React.FC = () => {
     return (
         <div>
             <AppBar position="static" className={classes.AppBar}>

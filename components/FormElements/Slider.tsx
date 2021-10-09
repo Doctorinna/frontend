@@ -1,5 +1,5 @@
 import React from "react";
-import {Slider as Slid} from "@material-ui/core";
+import {Slider as Slid} from "@mui/material";
 
 
 //todo check if max/min is needed in this component
