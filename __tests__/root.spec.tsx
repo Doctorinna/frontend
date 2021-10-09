@@ -1,16 +1,22 @@
+import 'jsdom-global/register';
 import React from "react";
-import {render, ReactWrapper, shallow, mount, ShallowWrapper} from "enzyme";
+import {ReactWrapper, shallow, mount, ShallowWrapper} from "enzyme";
 import Navigation from "../components/Navigation/Navigation";
-import {AppBar} from "@mui/material";
+import {AppBar, Grid} from "@mui/material";
+import Index from "../pages/index";
+import classes from "../components/Navigation/Navigation.module.scss";
 
 describe("Pages", ()=>{
-    describe("Root", ()=>{
-        it("Checking that tests are working", ()=>{
-            //"Appbar is exist"
-            // const wrap: ShallowWrapper = shallow(<Navigation/>);
-            // const appbar = wrap.contains(<AppBar/>);
-            // expect(appbar).toBe(true);
-            expect(true).toBe(true);
+    describe("Index page", ()=>{
+        it("Appbar exist", ()=>{
+            const wrapper: ShallowWrapper = shallow(<Navigation/>);
+            const contains = wrapper.find(AppBar);
+            expect(contains).toHaveLength(1);
+        })
+        it("All Grid components are rendered", ()=>{
+            const wrapper: ReactWrapper = mount(<Index/>);
+            const grid_number = wrapper.find(Grid).length;
+            expect(grid_number).toEqual(14);
         })
     })
 })
