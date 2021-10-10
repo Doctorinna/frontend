@@ -53,7 +53,6 @@ declare module "@mui/material/Typography" {
 export const THEME = createTheme({
         palette: {
             secondary: {
-                //light: "#6562CE",
                 main: "#6562CE"
             }
         },
