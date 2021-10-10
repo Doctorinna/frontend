@@ -22,6 +22,9 @@ const Select:React.FC<SelectProps> = ({options, value, handleValue, hasError}) =
                 color={"secondary"}
                 value={value}
                 onChange={handleValue}
+                sx={{
+                        borderRadius: "20px"
+                }}
             >
             {options.map((opt)=>(
                 <MenuItem key={opt.id} value={opt.answer}>{opt.answer}</MenuItem>

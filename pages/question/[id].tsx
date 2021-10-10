@@ -31,9 +31,6 @@ const QuestionPage: React.FC = () => {
         saveAnswers(answers);
         if (id + 1 == state.categories.length) {
             postAnswers();
-            // setTimeout(()=>{
-            //     push("/question/results");
-            // }, 2000);
             push("/question/results");
         } else
             push("/question/" + (id + 1));
@@ -48,7 +45,7 @@ const QuestionPage: React.FC = () => {
         <QuestionnaireHoc underline={2}>
             <TopNav chosen={state.categories[id]?.title}/>
             <Box>
-                <Grid container direction={"row"}>
+                <Grid container direction={"row"} justifyContent={"center"} alignItems={"center"}>
                     <Grid item xs={8}>
                         <Grid container direction={"row"} justifyContent={"center"} p={5}>
                             {questions.map((val, ind) => (

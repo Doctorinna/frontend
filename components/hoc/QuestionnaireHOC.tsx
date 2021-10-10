@@ -9,10 +9,10 @@ interface QuestionnaireHocProps {
 const QuestionnaireHoc: React.FC<QuestionnaireHocProps> = ({underline, children}) => {
     return (
         <Grid container direction="row">
-            <Grid item xs={4}>
+            <Grid item xs={2.5}>
                 <SideNav underline={underline}/>
             </Grid>
-            <Grid item xs={8}>
+            <Grid item xs={9.5}>
                 {children}
             </Grid>
         </Grid>
