@@ -1,70 +1,73 @@
-import React from "react";
-import {Box, Button, Grid} from "@mui/material";
+import React, {useEffect} from "react";
+import {Box, Button, Grid, Typography} from "@mui/material";
 import QuestionnaireHoc from "../../components/hoc/QuestionnaireHOC";
-import {QuestionType} from "../../redux/types";
+import {AnswerType} from "../../redux/types/questions";
 import TopNav from "../../components/Layout/TopNav";
 import Question from "../../components/Question/Question";
+import {useActions} from "../../hooks/useActions";
+import {useTypedSelector} from "../../hooks/useTypedSelector";
+import {useRouter} from "next/router";
 
 const QuestionPage: React.FC = () => {
-
-    //todo take from redux and apply component
-    //todo html
-    const questions: QuestionType[] = [
-        {
-            "id": 1,
-            "description": "How often do you smoke?",
-            "range": [],
-            "class": "Habits",
-            "options": [
-                {
-                    "id": 1,
-                    "answer": "Don't smoke"
-                },
-                {
-                    "id": 2,
-                    "answer": "Less than 10 cigaretts per day"
-                },
-                {
-                    "id": 3,
-                    "answer": "Less than 20 ciggaretts per day"
-                }
-            ]
-        },
-        {
-            "id": 2,
-            "description": "What is quality of air in your city?",
-            "class": "Breath",
-            "range": [
-                {
-                    "id": 1,
-                    "min": 0,
-                    "max": 10
-                }
-            ],
-            "options": []
-        }
-    ];
+    const {fetchQuestions, saveAnswers, fetchCategories, postAnswers} = useActions();
+    const {query, push} = useRouter();
+    const id = Number(query.id);
+    const state = useTypedSelector(state => state.questions);
+    useEffect(() => {
+        if (state.categories.length === 0)fetchCategories();
+    }, []);
+    useEffect(()=>{
+        fetchQuestions(state.categories[id]?.title);
+    }, [state.categories, id])
+    const next = () => {
+        let ret = false;
+        answers.forEach((answer, ind)=>{
+            if(answer.answer === ""){
+                errors[ind] = true;
+                ret=true;
+            }
+        })
+        if(ret)return;
+        saveAnswers(answers);
+        if (id + 1 == state.categories.length) {
+            postAnswers();
+            push("/question/results");
+        } else
+            push("/question/" + (id + 1));
+    }
+    const questions = state.questions;
+    let errors = questions.map((q) => false);
+    let answers: AnswerType[] = questions.map((q) => ({
+        question: q.id.toString(),
+        answer: ""
+    }));
     return (
         <QuestionnaireHoc underline={2}>
-                <TopNav chosen={"Personal"}/>
+            <TopNav chosen={state.categories[id]?.title}/>
             <Box>
-                <Grid container direction={"row"}>
-                    <Grid item>
-                        <Grid container direction={"column"} alignItems={"center"}>
+                <Grid container direction={"row"} justifyContent={"center"} alignItems={"center"}>
+                    <Grid item xs={8}>
+                        <Grid container direction={"row"} justifyContent={"center"} p={5}>
                             {questions.map((val, ind) => (
-                                <Grid item key={ind}>
-                                    <Question question={val}/>
+                                <Grid item key={ind} xs={12} p={5}>
+                                    <Typography component={"div"} variant={"home4"}>{val.description}</Typography>
+                                    <Question question={val} answer={answers[ind]}
+                                              setAns={(answer: AnswerType) => {
+                                                  answers[ind] = answer;
+                                              }}
+                                              hasError={errors[ind]}
+                                    />
                                 </Grid>
                             ))}
                         </Grid>
                     </Grid>
-                    <Grid item>
-                        <img src="" alt="question"/>
+                    <Grid item xs={4} p={5}>
+                        <img src="/LIFE_SUPPORT.png" alt="LIFE SUPPORT"/>
                     </Grid>
                 </Grid>
                 <Grid container direction={"row"} justifyContent={"right"} p={5}>
                     <Grid item>
-                        <Button>Next</Button>
+                        <Button onClick={next}>Next</Button>
                     </Grid>
                 </Grid>
             </Box>

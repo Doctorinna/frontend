@@ -1,6 +1,6 @@
 name: Running Code Coverage
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   build:

@@ -1,21 +1,37 @@
 import React from "react";
-import { MenuItem, TextField } from "@mui/material";
+import {
+    MenuItem,
+    Select as Sel,
+    FormControl,
+    SelectChangeEvent,
+    FormHelperText
+} from "@mui/material";
+import {Option} from "../../redux/types/questions";
 
 interface SelectProps {
-    options: string[],
+    options: Option[],
     value: string,
-    handleValue: ()=>void
+    handleValue: (e: SelectChangeEvent)=>void;
+    hasError: boolean;
 }
 
-const Select:React.FC<SelectProps> = ({options, value, handleValue}) => {
+const Select:React.FC<SelectProps> = ({options, value, handleValue, hasError}) => {
     return (
-        <TextField helperText="Please select answer"
-                   select label="select" color="secondary"
-                   value={value} onChange={handleValue}>
-            {options.map((val, ind)=>(
-                <MenuItem key={ind} value={val}>{val}</MenuItem>
+        <FormControl fullWidth error={hasError}>
+            <Sel
+                color={"secondary"}
+                value={value}
+                onChange={handleValue}
+                sx={{
+                        borderRadius: "20px"
+                }}
+            >
+            {options.map((opt)=>(
+                <MenuItem key={opt.id} value={opt.answer}>{opt.answer}</MenuItem>
             ))}
-        </TextField>
+            </Sel>
+            {hasError && <FormHelperText>This is required!</FormHelperText>}
+        </FormControl>
     );
 };
 

@@ -14,7 +14,7 @@ declare module "@mui/material/styles" {
         questionSideNav1: React.CSSProperties;
         questionSideNav2: React.CSSProperties;
         questionSideNav3: React.CSSProperties;
-
+        results1: React.CSSProperties;
     }
 
     // allow configuration using `createTheme`
@@ -29,6 +29,7 @@ declare module "@mui/material/styles" {
         questionSideNav1?: React.CSSProperties;
         questionSideNav2?: React.CSSProperties;
         questionSideNav3?: React.CSSProperties;
+        results1?: React.CSSProperties;
     }
 }
 
@@ -45,13 +46,13 @@ declare module "@mui/material/Typography" {
         questionSideNav1: true;
         questionSideNav2: true;
         questionSideNav3: true;
+        results1: true;
     }
 }
 //1rem == 16px
 export const THEME = createTheme({
         palette: {
             secondary: {
-                //light: "#6562CE",
                 main: "#6562CE"
             }
         },
@@ -137,6 +138,16 @@ export const THEME = createTheme({
                 lineHeight: "2.375rem",
                 textDecorationLine: "underline",
                 color: "#000000"
+            },
+            results1: {
+                fontFamily: "Inter",
+                fontStyle: "normal",
+                fontWeight: 800,
+                fontSize: "1.5rem",
+                lineHeight: "1.8125rem",
+                letterSpacing: "0.15625rem",
+                textTransform: "uppercase",
+                color: "#2D3436"
             }
         }
     })

@@ -1,14 +1,14 @@
 import {reducer as questionsReducer} from "./questions";
 import {combineReducers} from "redux";
 import {HYDRATE} from "next-redux-wrapper";
-import {actionTypes} from "../../types/redux/questions/questions";
+
 export const rootReducer = combineReducers({
     questions: questionsReducer
 })
 
 export type RootState = ReturnType<typeof rootReducer>;
 
-export const reducer = (state:any, action:any) => {
+export const reducer = (state: any, action: any) => {
     if (action.type === HYDRATE) {
         const nextState = {
             ...state, // use previous state

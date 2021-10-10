@@ -5,14 +5,13 @@ interface SideNavProps {
     underline: number
 }
 const SideNav:React.FC<SideNavProps> = ({underline}) => {
-    const vector = "/Vector.png";
     const links = ["Start", "Questionnaire", "Results", "Overview"];
     return (
-        <Box style={{backgroundColor: "#CBE1FD"}} p={5}>
+        <Box style={{backgroundColor: "#CBE1FD"}} p={5} sx={{height: "100%"}}>
             <Box mb={10}>
                 <Grid container alignItems={"flex-start"} justifyContent={"flex-start"} direction={"row"} >
                     <Grid item>
-                        <img src={vector} style={{height: "1.5rem", marginTop: "0.5rem"}} alt="heart"/>
+                        <img src={"/Vector.png"} style={{height: "1.5rem", marginTop: "0.5rem"}} alt="heart"/>
                     </Grid>
                     <Grid item>
                         <Typography variant="questionSideNav1" component="div">Doctorinna</Typography>

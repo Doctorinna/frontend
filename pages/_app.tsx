@@ -8,15 +8,15 @@ import {ThemeProvider} from "@mui/material";
 import {THEME} from "../styles/theme/theme";
 
 function MyApp({Component, pageProps, router}: AppProps) {
-
+    console.warn = () => {};
     return (
-        <ThemeProvider theme={THEME}>
-            <Layout>
-                <PageTransition location={router.pathname}>
-                    <Component {...pageProps}/>
-                </PageTransition>
-            </Layout>
-        </ThemeProvider>
+            <ThemeProvider theme={THEME}>
+                <Layout>
+                    <PageTransition location={router.pathname}>
+                        <Component {...pageProps}/>
+                    </PageTransition>
+                </Layout>
+            </ThemeProvider>
     )
 }
 

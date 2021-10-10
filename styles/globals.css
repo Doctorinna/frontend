@@ -14,3 +14,19 @@ a {
 * {
   box-sizing: border-box;
 }
+@font-face {
+  font-family: 'Mulish';
+  src: url('https://fonts.googleapis.com/css?family=Mulish');
+}
+@font-face {
+  font-family: 'Rubik';
+  src: url('https://fonts.googleapis.com/css?family=Rubik');
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('https://fonts.googleapis.com/css?family=Inter');
+}
+@font-face {
+  font-family: 'Mulish';
+  src: url('https://fonts.googleapis.com/css?family=Mulish');
+}
