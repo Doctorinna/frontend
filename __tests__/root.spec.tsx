@@ -4,7 +4,6 @@ import {ReactWrapper, shallow, mount, ShallowWrapper} from "enzyme";
 import Navigation from "../components/Navigation/Navigation";
 import {AppBar, Grid} from "@mui/material";
 import Index from "../pages/index";
-import classes from "../components/Navigation/Navigation.module.scss";
 
 describe("Pages", ()=>{
     describe("Index page", ()=>{

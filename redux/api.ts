@@ -1,23 +1,27 @@
 const urls = {
     HOST: "http://18.216.235.168",
-    PORT: "8000",
     mappings: {
         API: "api",
         RISKS: "risks",
         DISEASES: "diseases",
         QUESTIONS: "questions",
-        RESPONSES: "response",
+        RESPONSE: "response",
         CATEGORIES: "categories",
-
+        RESULT: "result",
+        STATISTICS: "statistics"
     }
 }
 const getQuestions = (category: string) =>
-    `${urls.HOST}:${urls.PORT}/${urls.mappings.API}/${urls.mappings.RISKS}/${urls.mappings.QUESTIONS}/${category}`;
+    `${urls.HOST}/${urls.mappings.API}/${urls.mappings.RISKS}/${urls.mappings.QUESTIONS}/${category}`;
 const getAllDiseases = () =>
-    `${urls.HOST}:${urls.PORT}/${urls.mappings.API}/${urls.mappings.RISKS}/${urls.mappings.DISEASES}`;
+    `${urls.HOST}/${urls.mappings.API}/${urls.mappings.RISKS}/${urls.mappings.DISEASES}`;
 const getAllCategories = () =>
-    `${urls.HOST}:${urls.PORT}/${urls.mappings.API}/${urls.mappings.RISKS}/${urls.mappings.CATEGORIES}`;
+    `${urls.HOST}/${urls.mappings.API}/${urls.mappings.RISKS}/${urls.mappings.CATEGORIES}/`;
 const sendAnswers = () =>
-    `${urls.HOST}:${urls.PORT}/${urls.mappings.API}/${urls.mappings.RISKS}/${urls.mappings.RESPONSES}`;
+    `${urls.HOST}/${urls.mappings.API}/${urls.mappings.RISKS}/${urls.mappings.RESPONSE}/`;
+const getResults = () =>
+    `${urls.HOST}/${urls.mappings.API}/${urls.mappings.RISKS}/${urls.mappings.RESULT}/`;
+const getStatistics = (illness: string) =>
+    `${urls.HOST}/${urls.mappings.API}/${urls.mappings.RISKS}/${urls.mappings.RESULT}/${urls.mappings.STATISTICS}/${illness}`;
 
-export default {getAllDiseases, getQuestions, sendAnswers};
+export {getAllDiseases, getQuestions, sendAnswers, getAllCategories, getResults, getStatistics};

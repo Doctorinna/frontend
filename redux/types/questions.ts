@@ -3,16 +3,31 @@ interface Range {
     min: number;
     max: number;
 }
-interface Option {
+
+interface Region {
+    region: string;
+    avg_factor: number;
+}
+
+interface LocalRegion {
+    label: string;
+    count: number;
+}
+
+export interface Option {
     id: number;
     answer: string;
 }
 
+interface Category {
+    id: number;
+    title: string
+}
 export interface QuestionType{
     id: number;
     description: string;
-    class: string;//todo change later
-    range: Range[];
+    category: Category;
+    range: Range | null;
     options: Option[];
 }
 
@@ -22,7 +37,12 @@ export interface DiseaseType {
     description: string;
 }
 
-export interface Answer {
+export interface CategoryType {
+    id: number;
+    title: string;
+}
+
+export interface AnswerType {
     question: string;
     answer: string;
 }
@@ -31,6 +51,8 @@ export interface Recommendation {
     risk_factor: number
     prescription: string
 }
-export interface Result {
-    recommendation: Recommendation[]
+
+export interface Statistics {
+    country: Region[]
+    your_region: LocalRegion[]
 }
