@@ -39,7 +39,6 @@ export const fetchCategories = () => async (dispatch: Dispatch) => {
     try {
         return await axios.get<CategoryType[]>(getAllCategories()).then(response => {
                 dispatch(actions.fetchCategories(response.data));
-                return response.data;
             }
         );
     } catch
@@ -58,8 +57,7 @@ export const saveAnswers = (answers: AnswerType[]) => async (dispatch: Dispatch)
 export const fetchResults = () => async (dispatch: Dispatch) => {
     try {
         return await axios.get<Recommendation[]>(getResults()).then(response => {
-            console.log("results");
-            console.log(response);
+            console.log(response.data);
                 dispatch(actions.fetchResults(response.data));
             }
         );

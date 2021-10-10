@@ -9,10 +9,6 @@ const Index: React.FC = () => {
     const start = () => {
         router.push("/question/0");
     }
-    const {fetchCategories} = useActions();
-    useEffect(()=>{
-        fetchCategories();
-    },[])
     const description = "We are the first open-source project that will help you identify your risk group by the most common diseases. 5 minutes to answer questions can not only determine your risk group but also help you live a long and happy life without diseases. Our artificial intelligence algorithms will be able to provide you with the necessary information to maintain and improve your health.";
     return (
         <Grid container alignItems={"flex-start"} justifyContent={"flex-start"} direction={"row"}>
