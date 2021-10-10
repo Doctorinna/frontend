@@ -11,11 +11,6 @@ jest.useFakeTimers()
 
 describe("Pages", ()=>{
     describe("Index page", ()=>{
-        it("Appbar exist", ()=>{
-            const wrapper: ShallowWrapper = shallow(<Navigation/>);
-            const contains = wrapper.find(AppBar);
-            expect(contains).toHaveLength(1);
-        })
         it("All Grid components in root page are rendered", ()=>{
             const wrapper: ReactWrapper = mount(<Provider store={makeStore()}>
                 <Index/>
