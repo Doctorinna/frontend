@@ -30,12 +30,12 @@ const Disease: React.FC = () => {
             </Box>
             <Box>
                 <Typography variant="home3" component="div">
-                    {result?.disease.illness + ". Risk is " + parseRisk(result.risk_factor) + "%"}
+                    {result?.disease.illness + ". Risk is " + result ? parseRisk(result?.risk_factor) + "%" : "unknown"}
                 </Typography>
             </Box>
             <Box>
                 <Typography variant="home3" component="div">
-                    {result.prescription}
+                    {result?.prescription}
                 </Typography>
             </Box>
             <Box>
