@@ -1,8 +1,7 @@
 import 'jsdom-global/register';
 import React from "react";
 import {ReactWrapper, shallow, mount, ShallowWrapper} from "enzyme";
-import Navigation from "../components/Navigation/Navigation";
-import {AppBar, Grid} from "@mui/material";
+import {Grid} from "@mui/material";
 import Index from "../pages/index";
 import QuestionnaireHoc from "../components/hoc/QuestionnaireHOC";
 import {Provider} from "react-redux";
