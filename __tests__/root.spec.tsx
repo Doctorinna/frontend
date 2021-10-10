@@ -4,11 +4,10 @@ import {ReactWrapper, shallow, mount, ShallowWrapper} from "enzyme";
 import Navigation from "../components/Navigation/Navigation";
 import {AppBar, Grid} from "@mui/material";
 import Index from "../pages/index";
-import QuestionPage from "../pages/question/[id]";
-import TopNav from "../components/Layout/TopNav";
 import QuestionnaireHoc from "../components/hoc/QuestionnaireHOC";
 import {Provider} from "react-redux";
-import {makeStore, wrapper} from "../redux/store";
+import {makeStore} from "../redux/store";
+jest.useFakeTimers()
 
 describe("Pages", ()=>{
     describe("Index page", ()=>{

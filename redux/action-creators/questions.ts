@@ -58,6 +58,8 @@ export const saveAnswers = (answers: AnswerType[]) => async (dispatch: Dispatch)
 export const fetchResults = () => async (dispatch: Dispatch) => {
     try {
         return await axios.get<Recommendation[]>(getResults()).then(response => {
+            console.log("results");
+            console.log(response);
                 dispatch(actions.fetchResults(response.data));
             }
         );

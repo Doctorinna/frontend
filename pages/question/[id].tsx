@@ -31,7 +31,10 @@ const QuestionPage: React.FC = () => {
         saveAnswers(answers);
         if (id + 1 == state.categories.length) {
             postAnswers();
-            push("/question/results");
+            setTimeout(()=>{
+                push("/question/results");
+            }, 3000)
+            //push("/question/results");
         } else
             push("/question/" + (id + 1));
     }
