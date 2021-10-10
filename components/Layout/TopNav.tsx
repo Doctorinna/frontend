@@ -16,7 +16,7 @@ const TopNav: React.FC<TopNav> = ({chosen}) => {
                 {categories.map((val, ind) => (
                     <React.Fragment key={val.id}>
                         <Grid item m={3}>
-                            <Typography variant={chosen === val.title ? "questionTopNav2" : "questionTopNav1"}
+                            <Typography sx={{textTransform: "capitalize"}} variant={chosen === val.title ? "questionTopNav2" : "questionTopNav1"}
                                         component="div">{val.title}</Typography>
                         </Grid>
                         <Grid item>

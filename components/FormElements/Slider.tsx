@@ -21,6 +21,18 @@ const Slider: React.FC<sliderProps> = ({optionHandler, max, min, value, handler,
     return (
         <Box>
             <Slid
+                sx={{
+                    "&.MuiSlider-mark": {
+                        display:"none",
+                        backgroundColor: "#9592FE",
+                        height: 2,
+                        width: 1,
+                        "&.MuiSlider-markActive": {
+                            opacity: 1,
+                            backgroundColor: "#35329E",
+                        }
+                    }
+                }}
                 value={value}
                 onChange={handler}
                 valueLabelDisplay="auto"
