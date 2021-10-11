@@ -34,6 +34,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## MVC
 MVC of applicatiom is deployed to vercel platform that already has CI.
 
-But unfortunately, vercel only permit https, so it isn't integrated with backend yet. It works locally thought.
+But unfortunately, vercel only permit https, so it isn't integrated with backend yet. It works locally though.
 
 You can see the app here [https://doctorinna.vercel.app/](https://doctorinna.vercel.app/)
