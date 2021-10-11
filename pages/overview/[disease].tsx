@@ -33,7 +33,7 @@ const Disease: React.FC = () => {
                     {result.disease.illness}
                 </Typography>
                 <Typography variant="diseases1" component="div">
-                    {"Risk is " + parseRisk(result.risk_factor)}
+                    {"Risk is " + parseRisk(result.risk_factor) + "%"}
                 </Typography>
             </Box>
             <Box m={2}>
