@@ -14,7 +14,7 @@ const Chart: React.FC<chartProps> = ({stats}) => {
     const colors = [purple["900"], purple["700"], purple["500"],
         purple["300"], purple["100"], purple["50"]];
     let max = stats.country[0].avg_factor;
-    stats.country.forEach(r => {
+    stats.country.forEach((r) => {
         if (r.avg_factor > max) max = r.avg_factor;
     });
     const scale = (percent: number) => percent / parseRisk(max) * 100;

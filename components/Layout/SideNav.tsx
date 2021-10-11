@@ -19,7 +19,7 @@ const SideNav:React.FC<SideNavProps> = ({underline}) => {
                 </Grid>
             </Box>
             <Grid container direction="column" alignItems="center" justifyContent="space-evenly">
-                {links.map((v,ind)=>(
+                {links.map((v,ind) => (
                     <Grid item key={ind} m={5}>
                         <Typography
                             variant={underline === ind+1 ? "questionSideNav3" : "questionSideNav2"}

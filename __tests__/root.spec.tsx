@@ -7,7 +7,6 @@ import QuestionnaireHoc from "../components/hoc/QuestionnaireHOC";
 import {Provider} from "react-redux";
 import {makeStore} from "../redux/store";
 import Layout from "../components/Layout/Layout";
-jest.useFakeTimers()
 
 describe("Pages", ()=>{
     describe("Index page", ()=>{

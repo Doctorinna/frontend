@@ -18,7 +18,12 @@ const QuestionPage: React.FC = () => {
     }, []);
     useEffect(() => {
         fetchQuestions(state.categories[id]?.title);
-    }, [state.categories, id])
+    }, [state.categories, id]);
+    const questions = state.questions;
+    let answers: AnswerType[] = questions.map((q) => ({
+        question: q.id.toString(),
+        answer: ""
+    }));
     const next = async () => {
         let ret = false;
         answers.forEach((answer, ind) => {
@@ -35,13 +40,8 @@ const QuestionPage: React.FC = () => {
             push("/question/results");
         } else
             push("/question/" + (id + 1));
-    }
-    const questions = state.questions;
+    };
     let errors = questions.map((q) => false);
-    let answers: AnswerType[] = questions.map((q) => ({
-        question: q.id.toString(),
-        answer: ""
-    }));
     return (
         <QuestionnaireHoc underline={2}>
             <TopNav chosen={state.categories[id]?.title}/>
