@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import {
-    Grid,
     SelectChangeEvent,
     Box
 } from "@mui/material";
