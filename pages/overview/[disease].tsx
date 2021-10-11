@@ -30,7 +30,7 @@ const Disease: React.FC = () => {
             </Box>
             <Box m={2}>
                 <Typography variant="diseases1" component="div" sx={{textTransform: "capitalize"}}>
-                    {result.disease.illness}
+                    {result?.disease.illness}
                 </Typography>
                 <Typography variant="diseases1" component="div">
                     {"Risk is " + parseRisk(result.risk_factor) + "%"}
@@ -45,7 +45,7 @@ const Disease: React.FC = () => {
                 <Grid container direction={"row"}>
                     <Grid item xs={5} p={3}>
                         <Typography variant="diseases3" component="div">
-                            {result.disease.description}
+                            {result?.disease.description}
                         </Typography>
                     </Grid>
                     <Grid item xs={7} p={3}>
