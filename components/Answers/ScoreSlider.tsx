@@ -10,7 +10,7 @@ const ScoreSlider: React.FC<scoreSliderProps> = ({value}) => {
         return rounded/10 + "%";
     }
     const N = 10;
-    const marks = Array.from({length: N}, (v, k) => (k+1)*10).map(val=>({value: val, label:val}));
+    const marks = Array.from({length: N}, (v, k) => (k+1)*10).map(val => ({value: val, label:val}));
     return (
         <Slider
             disabled
