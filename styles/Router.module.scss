@@ -4,9 +4,10 @@ $transition: opacity $timeout ease-in-out, transform $timeout ease-in-out;
 .page-entering {
   transition: $transition;
   opacity: 1;
-  transform: translateX(0px);
+  transform: translateX(0);
   animation: "blink .3s linear 2";
 }
+
 .page-exiting {
   transition: $transition;
   opacity: 0;
