@@ -10,10 +10,9 @@ interface chartProps {
 }
 
 const Chart: React.FC<chartProps> = ({stats}) => {
-    //https://dev.to/ramonak/react-how-to-create-a-custom-progress-bar-component-in-5-minutes-2lcl
     const colors = [purple["900"], purple["700"], purple["500"],
         purple["300"], purple["100"], purple["50"]];
-    let max = stats.country[0].avg_factor;
+    let max = stats.country[0]?.avg_factor;
     stats.country.forEach((r) => {
         if (r.avg_factor > max) max = r.avg_factor;
     });

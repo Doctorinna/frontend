@@ -20,7 +20,7 @@ const Results: React.FC = () => {
     }
     const results = state.results;
     return (
-            <Grid container direction="row">
+            <Grid container direction="row" justifyContent={"center"}>
                 {results.map((r)=>(
                     <Link href={"/overview/" + concatInOneString(r.disease.illness)} key={r.disease.illness}>
                         <a>

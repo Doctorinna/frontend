@@ -18,7 +18,7 @@ const Disease: React.FC = () => {
     }, []);
     return (
         <Box>
-            <Box mb={10}>
+            <Box mb={10} ml={3} pt={3}>
                 <Grid container alignItems={"flex-start"} justifyContent={"flex-start"} direction={"row"}>
                     <Grid item>
                         <img src={"/Vector.png"} style={{height: "1.5rem", marginTop: "0.5rem"}} alt="heart"/>
