@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Inter&family=Mulish&family=Rubik&display=swap');
 html,
 body {
   padding: 0;
@@ -14,19 +15,17 @@ a {
 * {
   box-sizing: border-box;
 }
+/*
 @font-face {
   font-family: 'Mulish';
-  src: url('https://fonts.googleapis.com/css?family=Mulish');
+  src: url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
 }
 @font-face {
   font-family: 'Rubik';
-  src: url('https://fonts.googleapis.com/css?family=Rubik');
+  src: url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 }
 @font-face {
   font-family: 'Inter';
-  src: url('https://fonts.googleapis.com/css?family=Inter');
+  src: url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 }
-@font-face {
-  font-family: 'Mulish';
-  src: url('https://fonts.googleapis.com/css?family=Mulish');
-}
+*/

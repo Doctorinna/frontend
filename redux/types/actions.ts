@@ -6,7 +6,8 @@ export interface questionsState {
     diseases: DiseaseType[],
     categories: CategoryType[],
     results: Recommendation[],
-    statistics: Statistics
+    statistics: Statistics,
+    token: string
 }
 
 export enum actionTypes {
@@ -15,7 +16,8 @@ export enum actionTypes {
     FETCH_CATEGORIES = "FETCH_CATEGORIES",
     FETCH_DISEASES = "FETCH_DISEASES",
     FETCH_RESULTS = "FETCH_RESULTS",
-    FETCH_STATISTICS = "FETCH_STATISTICS"
+    FETCH_STATISTICS = "FETCH_STATISTICS",
+    SAVE_TOKEN = "SAVE_TOKEN"
 }
 
 interface fetchQuestionsAction {
@@ -45,10 +47,15 @@ interface fetchResultsAction {
     type: actionTypes.FETCH_RESULTS,
     payload: Recommendation[]
 }
+interface saveTokenAction {
+    type: actionTypes.SAVE_TOKEN,
+    payload: string
+}
 
 export type actions = fetchQuestionsAction |
     saveAnswersAction |
     fetchDiseasesAction |
     fetchCategoriesAction |
     fetchResultsAction |
-    fetchStatisticsAction;
+    fetchStatisticsAction |
+    saveTokenAction;

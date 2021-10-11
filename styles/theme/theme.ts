@@ -1,6 +1,5 @@
 import React from "react";
 import {createTheme} from "@mui/material";
-import {color} from "@mui/system";
 
 declare module "@mui/material/styles" {
     interface TypographyVariants {
@@ -15,6 +14,10 @@ declare module "@mui/material/styles" {
         questionSideNav2: React.CSSProperties;
         questionSideNav3: React.CSSProperties;
         results1: React.CSSProperties;
+        diseases1: React.CSSProperties;
+        diseases2: React.CSSProperties;
+        diseases3: React.CSSProperties;
+        diseases4: React.CSSProperties;
     }
 
     // allow configuration using `createTheme`
@@ -30,6 +33,10 @@ declare module "@mui/material/styles" {
         questionSideNav2?: React.CSSProperties;
         questionSideNav3?: React.CSSProperties;
         results1?: React.CSSProperties;
+        diseases1?: React.CSSProperties;
+        diseases2?: React.CSSProperties;
+        diseases3?: React.CSSProperties;
+        diseases4?: React.CSSProperties;
     }
 }
 
@@ -47,6 +54,10 @@ declare module "@mui/material/Typography" {
         questionSideNav2: true;
         questionSideNav3: true;
         results1: true;
+        diseases1: true;
+        diseases2: true;
+        diseases3: true;
+        diseases4: true;
     }
 }
 //1rem == 16px
@@ -148,6 +159,43 @@ export const THEME = createTheme({
                 letterSpacing: "0.15625rem",
                 textTransform: "uppercase",
                 color: "#2D3436"
+            },
+            diseases1: {
+                fontFamily: "Mulish",
+                fontStyle: "normal",
+                fontWeight: "bold",
+                fontSize: "3.75rem",
+                lineHeight: "4.5rem"
+            },
+            diseases2: {
+                fontFamily: "Rubik",
+                fontStyle: "normal",
+                fontWeight: "bold",
+                fontSize: "2rem",
+                lineHeight: "2.375rem",
+            },
+            diseases3: {
+                fontFamily: "Rubik",
+                fontStyle: "normal",
+                fontWeight: "normal",
+                fontSize: "2rem",
+                lineHeight: "2.375rem",
+            },
+            diseases4: {
+                fontFamily: "IBM Plex Sans",
+                fontStyle: "normal",
+                fontWeight: "normal",
+                fontSize: "1.5rem",
+                lineHeight: "1rem",
+                /* identical to box height, or 67% */
+
+                textAlign: "right",
+                letterSpacing: "0.025rem",
+                textTransform: "capitalize",
+
+                /* Light Color */
+
+                color: "#FFFFFF"
             }
         }
     })
