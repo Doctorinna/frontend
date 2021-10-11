@@ -11,7 +11,7 @@ const Disease: React.FC = () => {
     const {disease} = query;
     const {fetchStatistics} = useActions();
     const {results, statistics} = useTypedSelector(state => state.questions);
-    const index = results.findIndex((v) => v?.disease.illness === disease);
+    const index = results.findIndex((v) => v.disease.illness === disease);
     const result = results[index];
     useEffect(() => {
         fetchStatistics(disease as string);
@@ -28,24 +28,27 @@ const Disease: React.FC = () => {
                     </Grid>
                 </Grid>
             </Box>
-            <Box>
-                <Typography variant="home3" component="div">
-                    {result?.disease.illness + ". Risk is " + result ? parseRisk(result?.risk_factor) + "%" : "unknown"}
+            <Box m={2}>
+                <Typography variant="diseases1" component="div" sx={{textTransform: "capitalize"}}>
+                    {result.disease.illness}
+                </Typography>
+                <Typography variant="diseases1" component="div">
+                    {"Risk is " + parseRisk(result.risk_factor)}
                 </Typography>
             </Box>
-            <Box>
-                <Typography variant="home3" component="div">
-                    {result?.prescription}
+            <Box m={2}>
+                <Typography variant="diseases2" component="div">
+                    {result.prescription}
                 </Typography>
             </Box>
-            <Box>
+            <Box m={4}>
                 <Grid container direction={"row"}>
                     <Grid item xs={5} p={3}>
-                        <Typography variant="home3" component="div">
-                            {result?.disease.description}
+                        <Typography variant="diseases3" component="div">
+                            {result.disease.description}
                         </Typography>
                     </Grid>
-                    <Grid item xs={7}>
+                    <Grid item xs={7} p={3}>
                         <Chart stats={statistics}/>
                     </Grid>
                 </Grid>

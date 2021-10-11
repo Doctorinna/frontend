@@ -19,9 +19,9 @@ const getAllCategories = () =>
     `${urls.HOST}/${urls.mappings.API}/${urls.mappings.RISKS}/${urls.mappings.CATEGORIES}/`;
 const sendAnswers = () =>
     `${urls.HOST}/${urls.mappings.API}/${urls.mappings.RISKS}/${urls.mappings.RESPONSE}/`;
-const getResults = () =>
-    `${urls.HOST}/${urls.mappings.API}/${urls.mappings.RISKS}/${urls.mappings.RESULT}/`;
-const getStatistics = (illness: string) =>
-    `${urls.HOST}/${urls.mappings.API}/${urls.mappings.RISKS}/${urls.mappings.RESULT}/${urls.mappings.STATISTICS}/${illness}`;
+const getResults = (token: string) =>
+    `${urls.HOST}/${urls.mappings.API}/${urls.mappings.RISKS}/${urls.mappings.RESULT}/${token}/__all__`;
+const getStatistics = (illness: string, token: string) =>
+    `${urls.HOST}/${urls.mappings.API}/${urls.mappings.RISKS}/${urls.mappings.RESULT}/${urls.mappings.STATISTICS}/${token}/${illness}`;
 
 export {getAllDiseases, getQuestions, sendAnswers, getAllCategories, getResults, getStatistics};

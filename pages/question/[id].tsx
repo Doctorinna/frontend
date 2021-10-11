@@ -9,28 +9,29 @@ import {useTypedSelector} from "../../hooks/useTypedSelector";
 import {useRouter} from "next/router";
 
 const QuestionPage: React.FC = () => {
-    const {fetchQuestions, saveAnswers, fetchCategories, postAnswers} = useActions();
+    const {fetchQuestions, saveAnswers, fetchCategories, postAnswers, fetchResults} = useActions();
     const {query, push} = useRouter();
     const id = Number(query.id);
     const state = useTypedSelector(state => state.questions);
     useEffect(() => {
-        if (state.categories.length === 0)fetchCategories();
+        if (state.categories.length === 0) fetchCategories();
     }, []);
-    useEffect(()=>{
+    useEffect(() => {
         fetchQuestions(state.categories[id]?.title);
     }, [state.categories, id])
-    const next = () => {
+    const next = async () => {
         let ret = false;
-        answers.forEach((answer, ind)=>{
-            if(answer.answer === ""){
+        answers.forEach((answer, ind) => {
+            if (answer.answer === "") {
                 errors[ind] = true;
-                ret=true;
+                ret = true;
             }
         })
-        if(ret)return;
+        if (ret) return;
         saveAnswers(answers);
         if (id + 1 == state.categories.length) {
             postAnswers();
+            fetchResults();
             push("/question/results");
         } else
             push("/question/" + (id + 1));

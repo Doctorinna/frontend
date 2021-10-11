@@ -9,11 +9,14 @@ const initialState: questionsState = {
     statistics: {
         country: [],
         your_region: []
-    }
+    },
+    token: ""
 }
 
 export const reducer = (state: questionsState = initialState, action: actions): questionsState => {
     switch (action.type) {
+        case actionTypes.SAVE_TOKEN:
+            return {...state, token: action.payload}
         case actionTypes.FETCH_QUESTIONS:
             return {...state, questions: action.payload};
         case actionTypes.FETCH_CATEGORIES:

@@ -54,10 +54,10 @@ export const saveAnswers = (answers: AnswerType[]) => async (dispatch: Dispatch)
         console.log(e.message)
     }
 }
-export const fetchResults = () => async (dispatch: Dispatch) => {
+export const fetchResults = () => async (dispatch: Dispatch, getState: ()=>RootState) => {
     try {
-        return await axios.get<Recommendation[]>(getResults()).then(response => {
-            console.log(response.data);
+        const token = getState().questions.token;
+        return await axios.get<Recommendation[]>(getResults(token)).then(response => {
                 dispatch(actions.fetchResults(response.data));
             }
         );
@@ -69,17 +69,19 @@ export const fetchResults = () => async (dispatch: Dispatch) => {
 export const postAnswers = () => async (dispatch: Dispatch, getState: ()=>RootState) => {
     try {
         const answers = getState().questions.answers;
-        console.log(answers);
-        return await axios.post(sendAnswers(), answers);
+        await axios.post<string>(sendAnswers(), answers).then(res => {
+            dispatch(actions.saveToken(res.data));
+        });
     } catch
         (e: any) {
         console.log(e.message)
     }
 }
-export const fetchStatistics = (illness: string) => async(dispatch: Dispatch) => {
+export const fetchStatistics = (illness: string) => async(dispatch: Dispatch,  getState: ()=>RootState) => {
     try {
-        return await axios.get<Statistics>(getStatistics(illness)).then(response => {
-            response.data
+        const token = getState().questions.token
+        return await axios.get<Statistics>(getStatistics(illness, token)).then(response => {
+            dispatch(actions.fetchStatistics(response.data));
         })
     }
     catch (e: any) {

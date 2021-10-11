@@ -32,5 +32,9 @@ export const actions = {
     fetchStatistics: (payload: Statistics) => ({
         type: actionTypes.FETCH_STATISTICS,
         payload
-    })
+    }),
+    saveToken: (payload: string) => ({
+    type: actionTypes.SAVE_TOKEN,
+    payload
+})
 }
