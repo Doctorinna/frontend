@@ -30,22 +30,22 @@ const Disease: React.FC = () => {
             </Box>
             <Box m={2}>
                 <Typography variant="diseases1" component="div" sx={{textTransform: "capitalize"}}>
-                    {result.disease.illness}
+                    {result?.disease.illness}
                 </Typography>
                 <Typography variant="diseases1" component="div">
-                    {"Risk is " + parseRisk(result.risk_factor) + "%"}
+                    {"Risk is " + parseRisk(result?.risk_factor) + "%"}
                 </Typography>
             </Box>
             <Box m={2}>
                 <Typography variant="diseases2" component="div">
-                    {result.prescription}
+                    {result?.prescription}
                 </Typography>
             </Box>
             <Box m={4}>
                 <Grid container direction={"row"}>
                     <Grid item xs={5} p={3}>
                         <Typography variant="diseases3" component="div">
-                            {result.disease.description}
+                            {result?.disease.description}
                         </Typography>
                     </Grid>
                     <Grid item xs={7} p={3}>
