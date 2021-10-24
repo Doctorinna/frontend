@@ -19,6 +19,7 @@ const QuestionPage: React.FC = () => {
     useEffect(() => {
         fetchQuestions(state.categories[id]?.title);
     }, [state.categories, id]);
+
     const questions = state.questions;
     let answers: AnswerType[] = questions.map((q) => ({
         question: q.id.toString(),
